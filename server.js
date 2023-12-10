@@ -11,7 +11,7 @@ console.log("my socket server is running");
 var socket = require('socket.io');
 var io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://vjluv.github.io/brush/",
     methods: ["GET", "POST"],
     credentials: true,
   },
