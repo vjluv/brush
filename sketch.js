@@ -1,13 +1,13 @@
+// sketch.js
 var socket;
 var currentBrush = 'brushone'; // Pincel padrão
 var b = 50;
-var x = 100; // Variável usada no brush two
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(250);
 
-  socket = io.connect('https://vjluv.github.io/brush/');
+  socket = io.connect('https://vjluv.github.io');
   socket.on('mouse', newDrawing);
 }
 
@@ -28,7 +28,7 @@ function mouseDragged() {
   var data = {
     x: mouseX,
     y: mouseY,
-    brush: currentBrush // Envie o pincel atual
+    brush: currentBrush,
   };
 
   socket.emit('mouse', data);
@@ -95,3 +95,4 @@ function keyPressed() {
 function draw() {
   // Adicione qualquer lógica de desenho adicional aqui, se necessário
 }
+
