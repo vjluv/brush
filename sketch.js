@@ -7,7 +7,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(250);
 
-  socket = io.connect('https://vjluv.github.io/brush');
+socket = io.connect('https://vjluv.github.io', { path: '/socket.io' });
+
   socket.on('mouse', newDrawing);
 }
 
