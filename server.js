@@ -6,13 +6,8 @@ app.use(express.static('public'));
 
 console.log("My socket server is running");
 
-const io = require('socket.io')(server, {
-  cors: {
-    origin: 'https://vjluv.github.io/brush',
-    methods: ["GET", "POST"],
-    credentials: true,
-  },
-});
+const io = require('socket.io')(server);
+
 
 io.sockets.on('connection', newConnection);
 
