@@ -9,11 +9,12 @@ console.log("My socket server is running");
 var socket = require('socket.io');
 var io = socket(server, {
   cors: {
-    origin: "https://vjluv.github.io/brush",
-    methods: ["GET", "POST"],
+    origin: 'https://vjluv.github.io/brush';
+    methods: ["GET", "POST"];
     credentials: true,
   },
 });
+const socket = io.connect('https://vjluv.github.io/brush'); // Substitua com a URL correta
 
 io.sockets.on('connection', newConnection);
 
